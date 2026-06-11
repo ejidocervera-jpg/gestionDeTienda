@@ -1,0 +1,169 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>proveedores</title>
+    <link rel="stylesheet" href="./admincss/proveedoresadmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <p>ELCTRONIC PRIX.</p>
+        </div>
+        <nav>
+              <a href="./inicioadmin.html">
+                <i class="fa-solid fa-gauge"></i>
+                Inicio
+            </a>
+            <a href="./inventarioadmin.html">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                Inventario
+                <a href="./proveedoresadmin.html">
+                    <i class="fa-solid fa-truck"></i>
+                    Proveedores
+                </a>
+                <a href="./reporteadmin.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Reportes
+                </a>
+                <a href="./cajaadmin.html">
+                    <i class="fa-solid fa-cash-register"></i>
+                    Caja
+                </a>
+                <a href="./usuarioadmin.html">
+                    <i class="fa-solid fa-users"></i>
+                    Gestión de Usuarios
+                </a>
+        </nav>
+    </header>
+
+    <main>
+        <h1>Gestión de Proveedores</h1>
+
+        <div class="acciones-proveedor">
+            <button id="abrirModal">
+                Registrar Proveedor
+            </button>
+        </div>
+        <section class="agregar-proveedor">
+            <h2>Agregar Nuevo Proveedor</h2>
+
+            <div class="provedor">
+
+                <section class="agregar-proveedor">
+                    <div id="modalProveedor" class="modal">
+
+                        <div class="modal-contenedor">
+
+                            <span class="cerrar-modal">&times;</span>
+
+                            <h2>Registrar Proveedor</h2>
+
+                            <form id="agregar-proveedor-form">
+
+                                <div class="campos">
+                                    <input type="text" id="nombre" placeholder="Nombre del proveedor" required>
+
+                                    <input type="text" id="contacto" placeholder="Nombre del contacto" required>
+                                </div>
+
+                                <div class="campos">
+                                    <input type="text" id="telefono" placeholder="Teléfono" required>
+
+                                    <input type="text" id="producto-solicitado" placeholder="Producto solicitado"
+                                        required>
+                                </div>
+
+                                <div class="campos">
+                                    <input type="number" id="cantidad-orden" placeholder="Cantidad" min="1" required>
+
+                                    <button type="submit">
+                                        Guardar Distribuidor
+                                    </button>
+                                </div>
+
+                            </form>
+
+                        </div>
+
+                    </div>
+                </section>
+                <section class="resumen-proveedores">
+                    <div class="caja">
+                        <h3>Proveedores</h3>
+                        <span id="totalProveedores">0</span>
+                    </div>
+
+                    <div class="caja">
+                        <h3>Órdenes</h3>
+                        <span id="totalOrdenes">0</span>
+                    </div>
+
+                    <div class="caja">
+                        <h3>Pendientes</h3>
+                        <span id="ordenesPendientes">0</span>
+                    </div>
+                </section>
+
+        </section>
+
+        </div>
+
+        <section class="proveedores">
+            <h2>Lista de Proveedores</h2>
+
+            <div class="buscar-proveedor">
+
+                <input type="text" placeholder="Buscar proveedor">
+            </div>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID</th>
+                        <th>Nombre</th>
+                        <th>Contacto</th>
+                        <th>Teléfono</th>
+                        <th>Acciones</th>
+                    </tr>
+                </thead>
+                <tbody id="listaproveedores">
+                    <!-- Aquí se llenarán los proveedores desde JavaScript -->
+                </tbody>
+            </table>
+        </section>
+
+
+        <section class="ordenes">
+            <h2>Control de abastecimiento y recepción de lote</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Orden</th>
+                        <th>Proveedor</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Fecha</th>
+                        <th>Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="ordenes-lista">
+                    <!-- Órdenes de surtido -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ELCTRONIC PRIX. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./adminjs/proveedoresadmin.js"></script>
+</body>
+
+</html>

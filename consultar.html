@@ -1,0 +1,100 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>consultar</title>
+    <link rel="stylesheet" href="./css/consultar.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <p>ELCTRONIC PRIX.</p>
+        </div>
+        <nav>
+            <a href="./inicio.html">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="./ventas.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Ventas
+            </a>
+
+            <a href="./consultar.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Consultar
+            </a>
+
+            <a href="./historial.html">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                Historial
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="consultal-panel">
+            <h1>Consulta de Productos</h1>
+            <p>Busca artículos por nombre, categoría o código y revisa su stock disponible.</p>
+
+            <div class="sbusqueda">
+                <input type="text" id="busquedaProducto" placeholder="Buscar producto por nombre o código">
+                <button id="btnBuscar">Buscar</button>
+                <button id="buscartodo">Mostrar Todo</button>
+            </div>
+
+            <div class="resumen-productos">
+
+                <div class="caja-producto">
+                    <h3>Productos</h3>
+                    <span id="cantidadProductos">0</span>
+                </div>
+
+                <div class="caja-producto">
+                    <h3>Stock Bajo</h3>
+                    <span id="stockBajo">0</span>
+                </div>
+
+                <div class="caja-producto">
+                    <h3>Categorías</h3>
+                    <span id="categorias">0</span>
+                </div>
+
+            </div>
+            <div class="tabla-productos">
+
+                <table class="consultar-tabla">
+                    <thead>
+                        <tr>
+                            <th>Código</th>
+                            <th>Producto</th>
+                            <th>Categoría</th>
+                            <th>Stock</th>
+                            <th>Precio</th>
+                            <th>Descripción</th>
+                        </tr>
+                    </thead>
+                    <tbody id="productos-consulta">
+                        <!-- Resultados de consulta -->
+                    </tbody>
+                </table>
+
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ELCTRONIC PRIX. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./js/consultar.js"></script>
+</body>
+
+</html>

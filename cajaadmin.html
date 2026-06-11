@@ -1,0 +1,113 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>caja</title>
+    <link rel="stylesheet" href="./admincss/cajaadmin.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <p>ELCTRONIC PRIX.</p>
+        </div>
+        <nav>
+             <a href="./inicioadmin.html">
+                <i class="fa-solid fa-gauge"></i>
+                Inicio
+            </a>
+            <a href="./inventarioadmin.html">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                Inventario
+                <a href="./proveedoresadmin.html">
+                    <i class="fa-solid fa-truck"></i>
+                    Proveedores
+                </a>
+                <a href="./reporteadmin.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Reportes
+                </a>
+                <a href="./cajaadmin.html">
+                    <i class="fa-solid fa-cash-register"></i>
+                    Caja
+                </a>
+                <a href="./usuarioadmin.html">
+                    <i class="fa-solid fa-users"></i>
+                    Gestión de Usuarios
+                </a>
+
+        </nav>
+    </header>
+
+    <main>
+        <section class="caja-panel">
+            <h1>Auditoría y Arqueo de Caja</h1>
+            <p>Controla el dinero recaudado durante la jornada y verifica los pagos por tipo.</p>
+
+            <div class="caja-summary">
+                <div class="summary-card efectivo">
+                    <h2>Efectivo</h2>
+                    <p id="caja-efectivo">0XFA</p>
+                </div>
+                <div class="summary-card tarjeta">
+                    <h2>Tarjeta</h2>
+                    <p id="caja-tarjeta">0XFA</p>
+                </div>
+                <div class="summary-card total">
+                    <h2>Total Recaudado</h2>
+                    <p id="caja-total">0XFA</p>
+                </div>
+                <div class="summary-card diferencia">
+                    <h2>Diferencia</h2>
+                    <p id="caja-diferencia">0XFA</p>
+                </div>
+                <div class="summary-card ventas">
+                    <h2>Nº Ventas</h2>
+                    <p id="numeroVentas">0</p>
+                </div>
+            </div>
+
+            <section class="filtro-caja">
+
+                <input type="date">
+                fecha de inicio
+                <input type="date">
+                fecha final
+                <button>
+                    Generar Arqueo
+                </button>
+
+            </section>
+
+            <section class="caja-transaccion">
+                <h2>Transacciones Recientes</h2>
+                <table>
+                    <thead>
+                        <tr>
+                            <th>ID</th>
+                            <th>Fecha</th>
+                            <th>Producto</th>
+                            <th>Total</th>
+                            <th>Pago</th>
+                        </tr>
+                    </thead>
+                    <tbody id="caja-transactions">
+                        <!-- Transacciones de caja -->
+                    </tbody>
+                </table>
+            </section>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ELCTRONIC PRIX. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./adminjs/cajaadmin.js"></script>
+</body>
+
+</html>

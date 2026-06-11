@@ -1,0 +1,27 @@
+﻿{
+  "efectivo": 89000,
+  "tarjeta": 100000,
+  "total": 189000,
+  "diferencia": 0,
+
+  "transacciones": [
+    {
+      "id": "T-001",
+      "fecha": "2026-06-04 10:12",
+      "empleado": "empleado1",
+      "producto": "Smartphone X1",
+      "cantidad": 1,
+      "total": 150000,
+      "pago": "Tarjeta"
+    },
+    {
+      "id": "T-002",
+      "fecha": "2026-06-04 11:05",
+      "empleado": "empleado2",
+      "producto": "Audífonos Bluetooth",
+      "cantidad": 1,
+      "total": 15000,
+      "pago": "Efectivo"
+    }
+  ]
+}

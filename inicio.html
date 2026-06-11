@@ -1,0 +1,89 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio</title>
+    <link rel="stylesheet" href="./css/inicio.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <p>ELCTRONIC PRIX.</p>
+        </div>
+        <nav>
+            <a href="./inicio.html">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="./ventas.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Ventas
+            </a>
+
+            <a href="./consultar.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Consultar
+            </a>
+
+            <a href="./historial.html">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                Historial
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="inicio-header">
+            <h1>Panel de Empleado</h1>
+            <p>Resumen de operaciones en caja y estado de stock para el turno actual.</p>
+        </section>
+
+        <section class="inicio-tarjetas">
+            <article class="tarjetas">
+                <h2><i class="fa-solid fa-money-bill-trend-up"></i>Ventas del Día</h2>
+                <p id="ventas-hoy">0XFA</p>
+            </article>
+            <article class="tarjetas">
+                <h2><i class="fa-solid fa-receipt"></i>Transacciones</h2>
+                <p id="transacciones-hoy">0XFA</p>
+            </article>
+            <article class="tarjetas">
+                <h2><i class="fa-solid fa-triangle-exclamation"></i>Stock Crítico</h2>
+                <p id="stock-critico">0 productos</p>
+            </article>
+            <article class="tarjetas">
+                <h2><i class="fa-solid fa-chart-line"></i>Ganancia Neta</h2>
+                <p id="ganancia-neta">0XFA</p>
+            </article>
+        </section>
+
+        <section class="resumen-operaciones">
+            <div class="resumen">
+                <h2>Últimas operaciones</h2>
+                <ul id="ultimas-ventas">
+                    <!-- Lista dinámica de ventas recientes -->
+                </ul>
+            </div>
+            <div class="resumen">
+                <h2><i class="fa-solid fa-triangle-exclamation"></i>Alertas de Reposición</h2>
+                <ul id="alertas-stock">
+                    <!-- Alertas de productos con stock bajo -->
+                </ul>
+            </div>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ELCTRONIC PRIX. CREANDO EL FUTURO</p>
+    </footer>
+
+    <script src="./js/inicio.js"></script>
+</body>
+
+</html>

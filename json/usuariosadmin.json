@@ -1,0 +1,23 @@
+﻿[
+  {
+    "id": 1,
+    "usuario": "admin",
+    "nombre": "Administrador",
+    "rol": "administrador",
+    "estado": "Activo"
+  },
+  {
+    "id": 2,
+    "usuario": "empleado1",
+    "nombre": "Luis Martínez",
+    "rol": "empleado",
+    "estado": "Activo"
+  },
+  {
+    "id": 3,
+    "usuario": "empleado2",
+    "nombre": "Sandra Torres",
+    "rol": "empleado",
+    "estado": "Activo"
+  }
+]

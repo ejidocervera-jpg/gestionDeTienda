@@ -1,0 +1,29 @@
+﻿[
+  {
+    "id":"1001",
+    "producto":"Smartphone X1",
+    "categoria":"Celulares",
+    "proveedor":"Samsung Distribuciones",
+    "stock":12,
+    "stockMinimo":5,
+    "precio":125000
+  },
+  {
+    "id":"1002",
+    "producto":"Audífonos Bluetooth",
+    "categoria":"Audio",
+    "proveedor":"Audio Tech",
+    "stock":4,
+    "stockMinimo":5,
+    "precio":15000
+  },
+  {
+    "id":"1003",
+    "producto":"Cargador USB-C",
+    "categoria":"Accesorios",
+    "proveedor":"Tech Supplier",
+    "stock":6,
+    "stockMinimo":5,
+    "precio":28500
+  }
+]

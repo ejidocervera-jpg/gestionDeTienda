@@ -1,0 +1,97 @@
+:root{
+  --colorPrimario: #0056b3;
+  --colorSecundario: #ffffff;
+  --bag: linear-gradient(180deg,#f8fbff,#eef4ff);
+  --radius: 12px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+    font-family:Arial, Helvetica, sans-serif;
+    background:#003c97;
+    min-height:100vh;
+}
+
+.contenedor{
+    display:flex;
+    justify-content:center;
+    align-items:center;
+    min-height:100vh;
+}
+
+.card-login{
+    background:white;
+    width:450px;
+    padding:40px;
+    border-radius:15px;
+    box-shadow:0 10px 25px rgba(0,0,0,.15);
+}
+
+.card-login h1{
+    text-align:center;
+    color:#003366;
+    margin-bottom:10px;
+}
+
+.subtitulo{
+    text-align:center;
+    color:#666;
+    margin-bottom:30px;
+    line-height:1.5;
+}
+
+.grupo{
+    margin-bottom:20px;
+}
+
+label{
+    display:block;
+    margin-bottom:8px;
+    font-weight:bold;
+    color:#333;
+}
+
+input{
+    width:100%;
+    padding:12px;
+    border:1px solid #ccc;
+    border-radius:8px;
+    font-size:15px;
+}
+
+input:focus{
+    outline:none;
+    border:1px solid #0056b3;
+}
+
+small{
+    display:block;
+    margin-top:5px;
+    color:#777;
+}
+
+
+.btn-login{
+    width:100%;
+    background:#0056b3;
+    color:white;
+    border:none;
+    padding:14px;
+    border-radius:8px;
+    font-size:16px;
+    cursor:pointer;
+}
+
+.btn-login:hover{
+    background:#003f88;
+}
+
+
+
+
+

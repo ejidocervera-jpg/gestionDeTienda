@@ -1,0 +1,100 @@
+﻿[
+ {
+  "codigo": "1001",
+  "nombre": "smart tv",
+  "categoria": "televisor",
+  "stock": 4,
+  "precio": 150000,
+  "descripcion": "televisor smart de ultima generacion."
+},
+
+ {
+  "codigo": "1002",
+  "nombre": "Audífonos Bluetooth",
+  "categoria": "Audio",
+  "stock": 4,
+  "precio": 15000,
+  "descripcion": "Audífonos inalámbricos con cancelación de ruido."
+},
+
+ {
+  "codigo": "1003",
+  "nombre": "samsung galaxi",
+  "categoria": "telefono",
+  "stock": 4,
+  "precio": 80000,
+  "descripcion": "telefono inteligente con 120 GB."
+},
+
+{
+  "codigo": "1004",
+  "nombre": "teclado",
+  "categoria": "teclado inalambrico",
+  "stock": 4,
+  "precio": 30000,
+  "descripcion": "teclado inalambrico de alta gama."
+},
+
+{
+  "codigo": "1005",
+  "nombre": "redmi 13c",
+  "categoria": "telefono",
+  "stock": 4,
+  "precio": 100000,
+  "descripcion": "telefono redmi de 120GB."
+},
+
+{
+  "codigo": "1005",
+  "nombre": "redmi 13c",
+  "categoria": "telefono",
+  "stock": 4,
+  "precio": 100000,
+  "descripcion": "telefono redmi de 120GB."
+},
+
+{
+  "codigo": "1005",
+  "nombre": "redmi 13c",
+  "categoria": "telefono",
+  "stock": 4,
+  "precio": 100000,
+  "descripcion": "telefono redmi de 120GB."
+},
+
+{
+  "codigo": "1005",
+  "nombre": "redmi 13c",
+  "categoria": "telefono",
+  "stock": 4,
+  "precio": 100000,
+  "descripcion": "telefono redmi de 120GB."
+},
+
+{
+  "codigo": "1005",
+  "nombre": "redmi 13c",
+  "categoria": "telefono",
+  "stock": 4,
+  "precio": 100000,
+  "descripcion": "telefono redmi de 120GB."
+},
+
+{
+  "codigo": "1005",
+  "nombre": "redmi 13c",
+  "categoria": "telefono",
+  "stock": 4,
+  "precio": 100000,
+  "descripcion": "telefono redmi de 120GB."
+},
+
+{
+  "codigo": "1005",
+  "nombre": "redmi 13c",
+  "categoria": "telefono",
+  "stock": 4,
+  "precio": 100000,
+  "descripcion": "telefono redmi de 120GB."
+}
+]

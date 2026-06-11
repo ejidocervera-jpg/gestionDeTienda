@@ -1,0 +1,74 @@
+﻿{
+  "productos": [
+    {"codigo": "1001", 
+    "nombre": "Smartphone X1", 
+    "categoria": "Telefonía",
+    "descripcion": "Teléfono inteligente de última generación",
+    "precio": 150000,
+    "stock": 12
+   },
+    {"codigo": "1002",
+     "nombre": "Audífonos Bluetooth",
+      "categoria": "Telefonía",
+     "descripcion": "Teléfono inteligente de última generación", 
+      "precio": 15000, 
+      "stock": 4
+    },
+    {"codigo": "1003", 
+    "nombre": "Cargador USB-C", 
+      "categoria": "Telefonía",
+    "descripcion": "Teléfono inteligente de última generación",
+    "precio": 10000, 
+    "stock": 6
+  },
+    {"codigo": "1004", 
+    "nombre": "Mouse Gamer",
+    "categoria": "Telefonía",
+     "descripcion": "Teléfono inteligente de última generación",
+     "precio": 15000, 
+     "stock": 8
+    },
+    {"codigo": "1005",
+     "nombre": "Teclado Mecánico",
+       "categoria": "Telefonía",
+      "descripcion": "Teléfono inteligente de última generación",
+      "precio": 20000,
+       "stock": 5
+      },
+    {"codigo": "1006", 
+    "nombre": "Monitor 24\"",
+      "categoria": "Telefonía",
+     "descripcion": "Teléfono inteligente de última generación",
+     "precio": 40000,
+      "stock": 3
+    },
+    {"codigo": "1007",
+     "nombre": "Samsung z fold \"",
+       "categoria": "Telefonía",
+     "descripcion": "Teléfono inteligente de última generación",
+      "precio": 1500000,
+       "stock": 15
+      },
+    {"codigo": "1008", 
+    "nombre": "Tablet S10", 
+      "categoria": "Telefonía",
+     "descripcion": "Teléfono inteligente de última generación",
+    "precio": 40000,
+     "stock": 5
+    },
+    {"codigo": "1009",
+     "nombre": "Impresora Multifuncional",
+       "categoria": "Telefonía",
+      "descripcion": "Teléfono inteligente de última generación",
+      "precio": 250000,
+       "stock": 4
+      },
+    {"codigo": "1010",
+     "nombre": "Disco Duro Externo 1TB",
+       "categoria": "Telefonía",
+      "descripcion": "Teléfono inteligente de última generación",
+      "precio": 15000, 
+      "stock": 10
+    }
+  ]
+}

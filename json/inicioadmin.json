@@ -1,0 +1,28 @@
+﻿{
+  "totalVentas": 4000000,
+  "proveedoresActivos": 12,
+  "usuariosActivos": 6,
+  "stockCritico": 5,
+  "gananciaNeta": 1200000,
+
+  "topProductos": [
+    {
+      "producto": "Smartphone X1",
+      "categoria": "Telefonía",
+      "ventas": 42,
+      "stock": 12
+    },
+    {
+      "producto": "Audífonos Bluetooth",
+      "categoria": "Audio",
+      "ventas": 35,
+      "stock": 4
+    },
+    {
+      "producto": "Teclado Mecánico",
+      "categoria": "Periféricos",
+      "ventas": 20,
+      "stock": 5
+    }
+  ]
+}

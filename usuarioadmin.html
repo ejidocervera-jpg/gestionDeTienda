@@ -1,0 +1,176 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>gestion de usuarios</title>
+    <link rel="stylesheet" href="./admincss/uasuarioadmin.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <p>ELCTRONIC PRIX.</p>
+        </div>
+        <nav>
+             <a href="./inicioadmin.html">
+                <i class="fa-solid fa-gauge"></i>
+                Inicio
+            </a>
+            <a href="./inventarioadmin.html">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                Inventario
+                <a href="./proveedoresadmin.html">
+                    <i class="fa-solid fa-truck"></i>
+                    Proveedores
+                </a>
+                <a href="./reporteadmin.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Reportes
+                </a>
+                <a href="./cajaadmin.html">
+                    <i class="fa-solid fa-cash-register"></i>
+                    Caja
+                </a>
+                <a href="./usuarioadmin.html">
+                    <i class="fa-solid fa-users"></i>
+                    Gestión de Usuarios
+                </a>
+
+        </nav>
+    </header>
+
+    <main>
+        <h1>Gestión de Usuarios</h1>
+        <div class="gestionUsuarios">
+            <button id="btnusuario">Agregar Usuario</button>
+
+            <div class="buscar-usuario">
+                <input type="text" placeholder="Buscar usuario...">
+            </div>
+            <table id="tablaUsuarios">
+
+                <thead>
+                    <tr>
+                        <th>Usuario</th>
+                        <th>Nombre</th>
+                        <th>Rol</th>
+                        <th>Acciones</th>
+                        <th class="activo">Estado</th>
+                    </tr>
+                </thead>
+                <tbody id="users-body">
+                    <!-- Aquí se llenarán los usuarios dinámicamente -->
+                </tbody>
+            </table>
+        </div>
+
+        <div id="ModalUsuario" class="modal">
+          <!-- MODAL USUARIO -->
+<div id="ModalUsuario" class="modal">
+
+    <div class="modal-contenedor">
+
+        <span class="cerrar">&times;</span>
+
+        <h2 id="tituloModal">
+            Registrar Usuario
+        </h2>
+
+        <form id="FormUsuario">
+
+            <input type="hidden" id="userId">
+
+            <div class="grupo-campo">
+                <label for="nombreUsuario">
+                    Nombre de Usuario
+                </label>
+
+                <input
+                    type="text"  id="nombreUsuario"  placeholder="Ej: jperez"  required>
+            </div>
+
+            <div class="grupo-campo">
+                <label for="name">
+                    Nombre Completo
+                </label>
+
+                <input type="text" id="name" placeholder="Ej: Juan Pérez" required>
+            </div>
+
+           
+
+            <div class="grupo-campo">
+                <label for="role">
+                    Rol
+                </label>
+
+                <select id="role" required>
+
+                    <option value="">
+                        Seleccione un rol
+                    </option>
+
+                    <option value="administrador">
+                        Administrador
+                    </option>
+
+                    <option value="empleado">
+                        Empleado
+                    </option>
+
+                </select>
+            </div>
+
+
+            <div class="grupo-campo">
+                <label for="estado">
+                    Estado
+                </label>
+
+                <select id="estado">
+
+                    <option value="activo">
+                        Activo
+                    </option>
+
+                    <option value="inactivo">
+                        Inactivo
+                    </option>
+
+                </select>
+            </div>
+
+            <div class="acciones-modal">
+
+                <button
+                    type="button" class="btn-cancelar">
+                    Cancelar
+                </button>
+
+                <button
+                    type="submit" class="btn-guardar">
+                         Guardar Usuario
+                </button>
+
+            </div>
+
+        </form>
+
+    </div>
+
+</div>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ELCTRONIC PRIX. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./adminjs/usuariosadmin.js"></script>
+</body>
+
+</html>

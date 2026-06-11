@@ -1,0 +1,16 @@
+[
+  {
+    "usuario": "administrador",
+    "contraseña": "admin1234",
+    "nombre": "administrador",
+    "rol": "administrador",
+    "panel": "inicioadmin.html"
+  },
+  {
+    "usuario": "empleado",
+    "contraseña": "emp123",
+    "nombre": "Empleado",
+    "rol": "empleado",
+    "panel": "inicio.html"
+  }
+]

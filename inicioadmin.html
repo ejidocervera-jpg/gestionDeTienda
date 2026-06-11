@@ -1,0 +1,114 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>inicio</title>
+    <link rel="stylesheet" href="./admincss/inicioadmin.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <p>ELCTRONIC PRIX.</p>
+        </div>
+        <nav>
+            <a href="./inicioadmin.html">
+                <i class="fa-solid fa-gauge"></i>
+                Inicio
+            </a>
+            <a href="./inventarioadmin.html">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                Inventario
+                <a href="./proveedoresadmin.html">
+                    <i class="fa-solid fa-truck"></i>
+                    Proveedores
+                </a>
+                <a href="./reporteadmin.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Reportes
+                </a>
+                <a href="./cajaadmin.html">
+                    <i class="fa-solid fa-cash-register"></i>
+                    Caja
+                </a>
+                <a href="./usuarioadmin.html">
+                    <i class="fa-solid fa-users"></i>
+                    Gestión de Usuarios
+                </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="inicio-admin">
+            <h1>Panel de Administrador</h1>
+            <p>Control centralizado de inventario, proveedores, reportes y caja.</p>
+
+            <div class="admin-tarjetas">
+                <article class="tarjeta ventas"><i class="fa-solid fa-cart-shopping"></i>
+                    <h2>Total Ventas</h2>
+                    <p id="admin-total-ventas">0XFA</p>
+                </article>
+                <article class="tarjeta proveedores"><i class="fa-solid fa-truck"></i>
+                    <h2>Proveedores</h2>
+                    <p id="admin-proveedores-activos">0</p>
+                </article>
+                <article class="tarjeta usuarios"><i class="fa-solid fa-users"></i>
+                    <h2>Usuarios Activos</h2>
+                    <p id="admin-usuarios-activos">0</p>
+                </article>
+                <article class="tarjeta stock"><i class="fa-solid fa-triangle-exclamation"></i>
+                    <h2>Stock Crítico</h2>
+                    <p id="admin-stock-critico">0</p>
+                </article>
+                <article class="tarjeta ganancia"><i class="fa-solid fa-sack-dollar"></i>
+                    <h2>Total de Ganancia </h2>
+                    <p id="admin-total-ganancia">0XFA</p>
+                </article>
+            </div>
+        </section>
+
+        <div class="acciones-rapidas">
+
+            <button>
+                Registrar Producto
+            </button>
+
+            <button>
+                Registrar Proveedor
+            </button>
+
+            <button>
+                Generar Reporte
+            </button>
+
+        </div>
+
+        <section class="top-productos">
+            <h2>Productos más vendidos</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>Producto</th>
+                        <th>Ventas</th>
+                        <th>Stock</th>
+                    </tr>
+                </thead>
+                <tbody id="topDeproductos-body">
+                    <!-- Productos más vendidos -->
+                </tbody>
+            </table>
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ELCTRONIC PRIX. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./adminjs/inicioadmin.js"></script>
+</body>
+
+</html>

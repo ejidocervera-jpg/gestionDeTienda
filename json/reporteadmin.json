@@ -1,0 +1,35 @@
+﻿{
+  "ingresosTotales": 15680900,
+  "ventasDia": 48,
+  "gananciaNeta": 4820250,
+
+  "ventas": [
+    {
+      "id": "V-1001",
+      "producto": "Smartphone X1",
+      "categoria": "Telefonía",
+      "cantidad": 2,
+      "precioTotal": 250000,
+      "fecha": "2026-06-04",
+      "metodo": "Tarjeta"
+    },
+    {
+      "id": "V-1002",
+      "producto": "Audífonos Bluetooth",
+      "categoria": "Audio",
+      "cantidad": 1,
+      "precioTotal": 150000,
+      "fecha": "2026-06-04",
+      "metodo": "Efectivo"
+    },
+    {
+      "id": "V-1003",
+      "producto": "Congelador Mediano",
+      "categoria": "Electrodomésticos",
+      "cantidad": 1,
+      "precioTotal": 210000,
+      "fecha": "2026-06-04",
+      "metodo": "Tarjeta"
+    }
+  ]
+}

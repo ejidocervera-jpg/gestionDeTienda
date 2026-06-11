@@ -1,0 +1,151 @@
+
+:root{
+  --colorPrimario:#0056b3;
+  --colorSecundario:#ffffff;
+  --bag:linear-gradient(180deg,#f8fbff,#eef4ff);
+  --radius:12px;
+}
+
+*{
+    margin:0;
+    padding:0;
+    box-sizing:border-box;
+}
+
+body{
+  min-height:100vh;
+  font-family:'Segoe UI',sans-serif;
+  background:var(--bag);
+  color:#222;
+}
+
+header{
+  background:var(--colorPrimario);
+  position:fixed;
+  top:0;
+  left:0;
+  z-index:1000;
+  width:100%;
+  color:white;
+  display:flex;
+  justify-content:space-between;
+  align-items:center;
+  padding:18px 40px;
+  box-shadow:0 4px 15px rgba(0,0,0,.08);
+  text-shadow:0 1px 3px rgba(0,0,0,.2);
+}
+
+.logo p{
+  font-size:25px;
+  font-weight:700;
+  letter-spacing:1px;
+  text-shadow:0 2px 5px rgba(0,0,0,.3);
+}
+
+nav{
+  display:flex;
+  gap:15px;
+}
+
+nav a{
+  color:white;
+  text-decoration:none;
+  padding:10px 18px;
+  border-radius:8px;
+  transition:.3s;
+  font-size:20px;
+}
+
+nav a:hover{
+  background:rgba(255,255,255,.15);
+}
+
+main{
+  max-width:1400px;
+  height:100%;
+  margin:auto;
+  padding:35px;
+}
+main{
+  margin-top:80px;
+}
+.inicio-header{
+  margin-bottom:30px;
+}
+
+.inicio-header h1{
+  color:var(--colorPrimario);
+  font-size:2rem;
+  margin-bottom:10px;
+}
+
+.inicio-header p{
+  color:#555;
+}
+
+.inicio-tarjetas{
+  display:grid;
+  grid-template-columns: repeat(auto-fit,minmax(250px,1fr));
+  gap:25px;
+  margin-bottom:35px;
+  text-align:center;
+}
+
+.tarjetas{
+  background:white;
+  padding:25px;
+  border-radius:var(--radius);
+  box-shadow:0 4px 20px rgba(0,0,0,.05);
+  transition:.3s;
+  border-left:5px solid var(--colorPrimario);
+}
+.tarjetas:hover{
+  box-shadow:0 8px 30px rgba(0,0,0,.1);
+  transform:translateY(-5px);
+}
+
+.tarjetas p{
+  font-size:17px;
+  font-weight:bold;
+  color:var(--colorPrimario);
+}
+
+.resumen-operaciones{
+  display:grid;
+  grid-template-columns:repeat(auto-fit,minmax(450px,1fr));
+  gap:25px;
+}
+
+.resumen{
+  background:white;
+  padding:25px;
+  border-radius:var(--radius);
+  box-shadow:0 4px 20px rgba(0,0,0,.05);
+}
+
+.resumen h2{
+  color:var(--colorPrimario);
+  margin-bottom:20px;
+  border-bottom:2px solid #eef4ff;
+  padding-bottom:10px;
+}
+
+.resumen ul{
+  list-style:none;
+}
+
+.resumen li{
+  padding:12px;
+  margin-bottom:10px;
+  background:#f8fbff;
+  border-radius:8px;
+  border-left:4px solid var(--colorPrimario);
+}
+
+footer{
+  margin-top:40px;
+  background:var(--colorPrimario);
+  color:white;
+  text-align:center;
+  padding:20px;
+}

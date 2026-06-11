@@ -1,0 +1,55 @@
+﻿{
+  "ventasHoy": 3000000,
+  "transaccionesHoy": 18,
+  "stockCritico": 4,
+  "gananciaNeta": 1000000,
+ 
+  "ultimasVentas": [
+    {"id": 101,
+    "fecha": "2026-06-05", 
+    "cliente": "Victoriano Manel",
+     "total": 25000
+    },
+    
+   {"id": 102, 
+   "fecha": "2026-06-06",
+    "cliente": "Carlos Cervera",
+     "total": 15000
+    },
+    
+    {"id": 103, 
+    "fecha": "2026-06-07",
+    "cliente": "pedro Panades",
+     "total": 420000
+    },
+
+    {"id": 103, 
+    "fecha": "2026-06-07",
+    "cliente": "Maria Ada",
+     "total": 420000
+    }
+  
+  ],
+  "alertasStock": [
+    
+  {
+    "producto": "Audífonos inalámbricos",
+    "stock": 2
+  },
+  {
+    "producto": "Cargadores USB-C",
+    "stock": 3
+  },
+
+    {
+      "producto": "Redmi 13c 120GB",
+      "stock": 1
+    },
+
+      {
+      "producto": "Samsung Galaxi 120GB",
+      "stock": 1
+    }
+
+  ]
+}

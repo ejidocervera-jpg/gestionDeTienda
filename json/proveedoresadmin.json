@@ -1,0 +1,39 @@
+﻿{
+  "proveedores": [
+    {
+      "id": "P-101",
+      "nombre": "TecnoSupply",
+      "contacto": "Laura Rios",
+      "telefono": "222-555-812",
+      "correo": "contacto@tecnosupply.com"
+    },
+    {
+      "id": "P-102",
+      "nombre": "ElectroMax",
+      "contacto": "Andrés Méndez",
+      "telefono": "555-655-014",
+      "correo": "ventas@electromax.com"
+    }
+  ],
+
+  "ordenes": [
+    {
+      "id": "O-2001",
+      "proveedor": "TecnoSupply",
+      "producto": "Smartphone X1",
+      "cantidad": 30,
+      "precioUnitario": 100000,
+      "fecha": "2026-06-01",
+      "estado": "Recibido"
+    },
+    {
+      "id": "O-2002",
+      "proveedor": "ElectroMax",
+      "producto": "Cargador USB-C",
+      "cantidad": 50,
+      "precioUnitario": 2000,
+      "fecha": "2026-06-03",
+      "estado": "Pendiente"
+    }
+  ]
+}

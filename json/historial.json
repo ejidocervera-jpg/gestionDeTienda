@@ -1,0 +1,65 @@
+﻿[
+  {
+    "id": "V-1001",
+    "fecha": "2026-06-04",
+    "empleado": "ventas1",
+    "cliente": "Carlos Cervera",
+    "cantidadProductos": 2,
+    "total": 350000,
+    "pago": "Efectivo",
+    "estado": "Completado"
+  },
+  {
+    "id": "V-1002",
+    "fecha": "2026-06-04",
+    "empleado": "ventas2",
+    "cliente": "Pedro Panades",
+    "cantidadProductos": 1,
+    "total": 200000,
+    "pago": "Tarjeta",
+    "estado": "Completado"
+  },
+  {
+    "id": "V-1003",
+    "fecha": "2026-06-04",
+    "empleado": "ventas1",
+    "cliente": "Victoriano Manel",
+    "cantidadProductos": 3,
+    "total": 40000,
+    "pago": "Efectivo",
+    "estado": "Completado"
+  },
+
+   {
+    "id": "V-1003",
+    "fecha": "2026-06-04",
+    "empleado": "ventas1",
+    "cliente": "Ramon Gaema",
+    "cantidadProductos": 3,
+    "total": 40000,
+    "pago": "Efectivo",
+    "estado": "anulado"
+  },
+
+   {
+    "id": "V-1003",
+    "fecha": "2026-06-04",
+    "empleado": "ventas1",
+    "cliente": "Marcial Esono",
+    "cantidadProductos": 3,
+    "total": 40000,
+    "pago": "Efectivo",
+    "estado": "pendiente"
+  },
+
+   {
+    "id": "V-1003",
+    "fecha": "2026-06-04",
+    "empleado": "ventas1",
+    "cliente": "María Ada",
+    "cantidadProductos": 3,
+    "total": 40000,
+    "pago": "Efectivo",
+    "estado": "Completado"
+  }
+]

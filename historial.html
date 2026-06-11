@@ -1,0 +1,98 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>historial</title>
+    <link rel="stylesheet" href="./css/historial.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <p>ELCTRONIC PRIX.</p>
+        </div>
+        <nav>
+            <a href="./inicio.html">
+                <i class="fa-solid fa-house"></i>
+                Inicio
+            </a>
+
+            <a href="./ventas.html">
+                <i class="fa-solid fa-cart-shopping"></i>
+                Ventas
+            </a>
+
+            <a href="./consultar.html">
+                <i class="fa-solid fa-magnifying-glass"></i>
+                Consultar
+            </a>
+
+            <a href="./historial.html">
+                <i class="fa-solid fa-clock-rotate-left"></i>
+                Historial
+            </a>
+        </nav>
+    </header>
+
+    <main>
+        <section class="historial-panel">
+            <h1>Historial de Ventas</h1>
+            <p>Revisa las ventas registradas, los métodos de pago y el estado de cada transacción.</p>
+
+            <div class="sbusqueda">
+                <input type="text" id="buscarVenta" placeholder="Buscar la venta por id,cliente o estado">
+                <button id="btnBuscarVenta">Buscar</button>
+                <button id="buscartodo">Mostrar Todo</button>
+            </div>
+            <div class="resumen-historial">
+
+                <div class="caja-historial">
+                    <h3>Total Ventas</h3>
+                    <span id="totalVentas">0</span>
+                </div>
+
+                <div class="caja-historial">
+                    <h3>Efectivo</h3>
+                    <span id="ventasEfectivo">0</span>
+                </div>
+
+                <div class="caja-historial">
+                    <h3>Tarjeta</h3>
+                    <span id="ventasTarjeta">0</span>
+                </div>
+
+            </div>
+
+            <div class="tabla-container">
+                <table class="historial-tabla">
+                    <thead>
+                        <tr>
+                            <th>ID Venta</th>
+                            <th>Fecha</th>
+                            <th>Cliente</th>
+                            <th>Total</th>
+                            <th>Pago</th>
+                            <th>Estado</th>
+                        </tr>
+                    </thead>
+                    <tbody id="historial-body">
+                        <!-- Historial de ventas -->
+                    </tbody>
+                </table>
+            </div>
+
+        </section>
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ELCTRONIC PRIX. Todos los derechos reservados.</p>
+    </footer>
+
+    <script src="./js/historial.js"></script>
+</body>
+
+</html>

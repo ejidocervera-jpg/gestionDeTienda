@@ -1,0 +1,105 @@
+﻿<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>reporte</title>
+    <link rel="stylesheet" href="./admincss/reporteadmin.css">
+     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+</head>
+
+<body>
+    <header>
+        <div class="logo">
+
+            <p>ELCTRONIC PRIX.</p>
+        </div>
+        <nav>
+               <a href="./inicioadmin.html">
+                <i class="fa-solid fa-gauge"></i>
+                Inicio
+            </a>
+            <a href="./inventarioadmin.html">
+                <i class="fa-solid fa-boxes-stacked"></i>
+                Inventario
+                <a href="./proveedoresadmin.html">
+                    <i class="fa-solid fa-truck"></i>
+                    Proveedores
+                </a>
+                <a href="./reporteadmin.html">
+                    <i class="fa-solid fa-chart-pie"></i>
+                    Reportes
+                </a>
+                <a href="./cajaadmin.html">
+                    <i class="fa-solid fa-cash-register"></i>
+                    Caja
+                </a>
+                <a href="./usuarioadmin.html">
+                    <i class="fa-solid fa-users"></i>
+                    Gestión de Usuarios
+                </a>
+
+        </nav>
+    </header>
+
+    <main>
+        <h1>Reporte de Ventas</h1>
+        <section class="reporte">
+            <div class="resumenTarjetas ingresos">
+                <h2>Ingresos Totales</h2>
+                <p id="reporte-ingresos">0XFA</p>
+            </div>
+            <div class="resumenTarjetas ventas">
+                <h2>Ventas del Día</h2>
+                <p id="reporte-ventas">0</p>
+            </div>
+            <div class="resumenTarjetas ganancia">
+                <h2>Ganancia Neta</h2>
+                <p id="reporteGanancia">0XFA</p>
+            </div>
+        </section>
+
+        <section class="filtros">
+
+            <input type="date">
+                    fecha de inicio
+            <input type="date">
+                    fecha final
+            <button>
+                Generar Reporte
+            </button>
+
+            <button class="btn-exportar">
+                Exportar PDF
+            </button>
+        </section>
+
+        <section class="tablaReporte">
+            <h2>Detalle de ventas</h2>
+            <table>
+                <thead>
+                    <tr>
+                        <th>ID Venta</th>
+                        <th>Producto</th>
+                        <th>Cantidad</th>
+                        <th>Precio Total</th>
+                        <th>Fecha</th>
+                        <th>Método</th>
+                    </tr>
+                </thead>
+                <tbody id="reporte-body">
+                    <!-- Aquí se llenarán los datos del reporte -->
+                </tbody>
+            </table>
+        </section>
+
+    </main>
+
+    <footer>
+        <p>&copy; 2023 ELCTRONIC PRIX. Todos los derechos reservados.</p>
+    </footer>
+    <script src="./adminjs/reporteadmin.js"></script>
+</body>
+
+</html>
