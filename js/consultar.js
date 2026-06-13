@@ -178,8 +178,7 @@ if(!patron.test(textoBusqueda)){
 }
 
 function mostrarTodo() {
-    document.getElementById("buscartodo").value = "",
-    
+    document.getElementById("buscartodo").value = "", 
     mostrarProductos(productos);
     actualizarResumen(productos)
 }

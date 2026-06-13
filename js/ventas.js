@@ -1,209 +1,228 @@
 ﻿
-
+// mis variables iniciales o globales
 let productos = [];
 let carrito = [];
 
-document.addEventListener("DOMContentLoaded", function(){
+// las expresiones regulares de los 
+const PatronCodigo = /^[0-9]+$/;
+const PatronProducto = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]+$/;    
+
+document.addEventListener("DOMContentLoaded", function () {
     cargarProductos();
+
+    let codigo = document.getElementById("codigo");
+    let busqueda = document.getElementById("busqueda");
+    let errorCodigo = document.getElementById("error-codigo");
+    let errorBusqueda = document.getElementById("error-busqueda");
+
+    // validar el codigo en tiempo real
+    codigo.addEventListener("input", function () {
+        if (codigo.value.length === 0) {
+            codigo.classList.remove("correcto");
+            codigo.classList.remove("error");
+            errorCodigo.style.display = "none";
+            return;
+        }
+
+        if (PatronCodigo.test(codigo.value)) {
+            codigo.classList.add("correcto");
+            codigo.classList.remove("error");
+            errorCodigo.style.display = "none";
+        } else {
+            codigo.classList.add("error");
+            codigo.classList.remove("correcto");
+            errorCodigo.textContent = "Solo se permiten números";
+            errorCodigo.style.display = "block";
+        }
+    });
+
+    // validar la busqueda en tiempo real
+    busqueda.addEventListener("input", function () {
+        if (busqueda.value.length === 0) {
+            busqueda.classList.remove("correcto");
+            busqueda.classList.remove("error");
+            errorBusqueda.style.display = "none";
+            return;
+        }
+
+        if (PatronProducto.test(busqueda.value)) {
+            busqueda.classList.add("correcto");
+            busqueda.classList.remove("error");
+            errorBusqueda.style.display = "none";
+        } else {
+            busqueda.classList.add("error");
+            busqueda.classList.remove("correcto");
+            errorBusqueda.textContent = "Solo letras y números";
+            errorBusqueda.style.display = "block";
+        }
+    });
+
+    // capturando los botones
     document.getElementById("btnAgregar").addEventListener("click", agregarProducto);
     document.getElementById("btnRemover").addEventListener("click", removerLinea);
     document.getElementById("btnConfirmar").addEventListener("click", confirmarVenta);
     document.getElementById("efectivo").addEventListener("input", calcularCambio);
-    console.log("JS cargado correctamente");
 });
 
-
-// AQUI ESTOY CARGANDO LOS  PRODUCTOS DESDE JSON
-function cargarProductos(){
+// ===== Cargar productos desde JSON =====
+function cargarProductos() {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "./json/ventas.json", true);
-    xhr.onreadystatechange = function(){
-        if(xhr.readyState === 4 && xhr.status === 200){
+    xhr.onreadystatechange = function () {
+        if (xhr.readyState === 4 && xhr.status === 200) {
             const datos = JSON.parse(xhr.responseText);
             productos = datos.productos;
+            console.log(productos);
         }
-
     };
-   xhr.send();
+    xhr.send();
 }
 
-// AQUI ESTOY TRATANDO DE AGREGAR PRODUCTO A LA FACTURA
-function agregarProducto(){
+// ===== Buscar producto por código o nombre =====
+function buscarProducto() {
     const codigo = document.getElementById("codigo").value.trim();
     const busqueda = document.getElementById("busqueda").value.trim().toLowerCase();
-    const cantidad = parseInt(document.getElementById("cantidad").value);
-    const descuento = parseFloat(document.getElementById("descuento").value);
+
     let productoEncontrado = null;
-console.log("Botón pulsado");
-    // AQUI ESTOY BUSCANDO POR CÓDIGO
-    if(codigo !== ""){
-        for(let i = 0; i < productos.length; i++){
-            if(productos[i].codigo === codigo){
-                productoEncontrado = productos[i];
-            }
-                
-        }
-// AQUI ESTOY BUSCANDO POR NOMBRE
-    }else if(busqueda !== ""){
-        for(let i = 0; i < productos.length; i++){
-            if(productos[i].nombre.toLowerCase().includes(busqueda)){
-                productoEncontrado = productos[i];
-            }
 
-        }
-
+    if (codigo.length > 0) {
+        productoEncontrado = productos.find(p => String(p.codigo) === codigo);
+    } else if (busqueda.length > 0) {
+        productoEncontrado = productos.find(p => p.nombre.toLowerCase().includes(busqueda));
     }
 
-    // VALIDANDO EL PRODUCTO
-    if(productoEncontrado === null){
+    return productoEncontrado;
+}
+
+// ===== Añadir producto a la factura =====
+function agregarProducto() {
+    const producto = buscarProducto();
+
+    if (!producto) {
         alert("Producto no encontrado");
         return;
-
     }
 
+    const cantidad = parseInt(document.getElementById("cantidad").value);
+    const descuento = parseFloat(document.getElementById("descuento").value);
 
-    // VALIDANDO EL STOCK PARA COMPROBAR QUE LOS PRODUCTOS SEAN MAYORES QUE LA CANTIDAD
-
-    if(cantidad > productoEncontrado.stock){
-        alert("No hay suficiente stock disponible");
+    if (isNaN(cantidad) || cantidad <= 0) {
+        alert("Cantidad inválida");
         return;
     }
 
+    if (isNaN(descuento) || descuento < 0 || descuento > 100) {
+        alert("Descuento inválido");
+        return;
+    }
 
-    // REALIZANDO LOS CALCULOS
-    let subtotal = productoEncontrado.precio * cantidad;
-    let valorDescuento = subtotal * descuento / 100;
-    let totalLinea = subtotal - valorDescuento;
+    const precio = producto.precio;
+    const subtotalLinea = precio * cantidad;
+    const descuentoLinea = subtotalLinea * (descuento / 100);
+    const totalLinea = subtotalLinea - descuentoLinea;
 
-
-    // CREANDO EL OBJETO QUE CONTRENDRA EL CARRITO
-
-    const carrito = {
-        codigo: productoEncontrado.codigo,
-        nombre: productoEncontrado.nombre,
+    factura.push({
+        codigo: producto.codigo,
+        nombre: producto.nombre,
         cantidad: cantidad,
-        precio: productoEncontrado.precio,
+        precio: precio,
         descuento: descuento,
         subtotal: totalLinea
+    });
 
-    };
-
-console.log(carrito);
-console.log(typeof carrito);
-    // GUARDANDO EN EL CARRITO
-    carrito.push(carrito);
-
-
-    // ACTUALIZAR TABLA Y TOTALES
-    mostrarFactura();
+    renderFactura();
     calcularTotales();
+    limpiarFormulario();
+}
 
-    // LIMPIAR CAMPOS
+// ===== Remover la última línea de la factura =====
+function removerLinea() {
+    if (factura.length === 0) {
+        alert("No hay líneas para remover");
+        return;
+    }
+    factura.pop();
+    renderFactura();
+    calcularTotales();
+}
+
+// ===== Renderizar la tabla de la factura =====
+function renderFactura() {
+    const cuerpo = document.getElementById("carro-body");
+    cuerpo.innerHTML = "";
+
+    factura.forEach(linea => {
+        const fila = document.createElement("tr");
+        fila.innerHTML = `
+            <td>${linea.codigo}</td>
+            <td>${linea.nombre}</td>
+            <td>${linea.cantidad}</td>
+            <td>${linea.precio} XFA</td>
+            <td>${linea.descuento}%</td>
+            <td>${linea.subtotal.toFixed(2)} XFA</td>
+        `;
+        cuerpo.appendChild(fila);
+    });
+}
+
+//  Calcular subtotal, descuento y total 
+function calcularTotales() {
+    let subtotal = 0;
+    let descuentoTotal = 0;
+
+   factura.forEach(linea => {
+    const subtotalLinea = linea.precio * linea.cantidad;
+    subtotal += subtotalLinea;
+    descuentoTotal += subtotalLinea * (linea.descuento / 100);
+});
+
+    const total = subtotal - descuentoTotal;
+    document.getElementById("subtotalResumen").textContent = subtotal.toFixed(2) + " XFA";
+    document.getElementById("descuentoResumen").textContent = descuentoTotal.toFixed(2) + " XFA";
+    document.getElementById("totalResumen").textContent = total.toFixed(2) + " XFA";
+    calcularCambio();
+}
+
+//  Calcular el cambio según el efectivo recibido 
+function calcularCambio() {
+    const totalTexto = document.getElementById("totalResumen").textContent;
+    const total = parseFloat(totalTexto) || 0;
+
+    const efectivo = parseFloat(document.getElementById("efectivo").value) || 0;
+    const cambio = efectivo - total;
+    document.getElementById("cambioResumen").textContent =
+        (cambio >= 0 ? cambio.toFixed(2) : "0.00") + " XFA";
+}
+
+//  Limpiar el formulario después de agregar 
+function limpiarFormulario() {
     document.getElementById("codigo").value = "";
     document.getElementById("busqueda").value = "";
     document.getElementById("cantidad").value = 1;
     document.getElementById("descuento").value = 0;
-
+    document.getElementById("codigo").classList.remove("correcto", "error");
+    document.getElementById("busqueda").classList.remove("correcto", "error");
 }
 
-
-
-// ELABORANDO MOSTRAR FACTURA
-
-function mostrarFactura(){
-    const tbody = document.getElementById("carro-body");
-    tbody.innerHTML = "";
-    for(let i = 0; i < carrito.length; i++){
-        const fila = document.createElement("tr");
-        fila.innerHTML =
-        "<td>" + carrito[i].codigo + "</td>" +
-        "<td>" + carrito[i].nombre + "</td>" +
-        "<td>" + carrito[i].cantidad + "</td>" +
-        "<td>" + carrito[i].precio + " XFA</td>" +
-        "<td>" + carrito[i].descuento + "%</td>" +
-        "<td>" + carrito[i].subtotal + " XFA</td>";
-        tbody.appendChild(fila);
-
-    }
-
-}
-
-
-// AQUI ESTOY CALCULANDO  LA TOTALIDAD 
-
-function calcularTotales(){
-    let subtotalGeneral = 0;
-    let totalDescuento = 0;
-    for(let i = 0; i < carrito.length; i++){
-        let subtotalProducto = carrito[i].precio * carrito[i].cantidad;
-        subtotalGeneral += subtotalProducto;
-        totalDescuento += subtotalProducto * carrito[i].descuento / 100;
-    }
-
-
-    let totalFinal =subtotalGeneral -totalDescuento;
-    document.getElementById("subtotalResumen")
-    .textContent = subtotalGeneral + " XFA";
-
-    document.getElementById("descuentoResumen")
-    .textContent = totalDescuento + " XFA";
-    document.getElementById("totalResumen").textContent = totalFinal + " XFA";
-
-    calcularCambio();
-
-}
-
-
-// CALCULANDO EL  CAMBIO
-
-function calcularCambio(){
-    let efectivo = parseFloat( document.getElementById("efectivo").value) || 0;
-    let totalTexto = document.getElementById("totalResumen").textContent;
-    let total = parseFloat( totalTexto.replace(" XFA", "")) || 0;
-    let cambio = efectivo - total;
-    if(cambio < 0){
-        cambio = 0;
-    }
-    document.getElementById("cambioResumen").textContent = cambio + " XFA";
-
-}
-
-
-
-// REMOVIENDO LA ULTIMA LINEA
-function removerLinea(){
-    if(carrito.length === 0){
-        alert("No hay productos para eliminar");
-        return;
-
-    }
-    carrito.pop();
-    mostrarFactura();
-    calcularTotales();
-
-}
-
-
-// CONFIRMAR VENTA
-function confirmarVenta(){
-    if(carrito.length === 0){
+// Confirmar venta 
+function confirmarVenta() {
+    if (factura.length === 0) {
         alert("No hay productos en la factura");
-        return;
+        return false;
     }
 
-    alert("Venta registrada correctamente");
+    const total = parseFloat(document.getElementById("totalResumen").textContent) || 0;
+    const efectivo = parseFloat(document.getElementById("efectivo").value) || 0;
 
+    if (efectivo < total) {
+        alert("El efectivo recibido es insuficiente");
+        return false;
+    }
 
-    // LIMPIANDO LA PAGINA FACTURA
-
-    carrito = [];
-
-    mostrarFactura();
-
+    alert("Venta confirmada. Total: " + total.toFixed(2) + " XFA");
+    // tratando de reiniciar la factura
+    factura = [];
+    renderFactura();
     calcularTotales();
-
     document.getElementById("efectivo").value = 0;
-
-    document.getElementById("cambioResumen").textContent = "0 XFA";
-
 }

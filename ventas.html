@@ -6,7 +6,7 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>ventas</title>
     <link rel="stylesheet" href="./css/ventas.css">
-     <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
+    <link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.7.2/css/all.min.css">
 </head>
 
 <body>
@@ -44,74 +44,92 @@
                 <h1>Facturación POS</h1>
                 <p>Ingresa el código o busca el producto para añadirlo a la factura.</p>
             </div>
-
             <div class="ventas">
-                <form id="ventaform" class="form">
+                 <form id="ventaform">
+                <div class="grupo-campo">
+                    <label for="codigo">Código de Barras / Código</label>
+                    <input type="text" id="codigo" placeholder="Ej. 1002" autocomplete="off">
+                    <small id="error-codigo" class="mensaje-error"></small>
+                </div>
+
+                <div class="grupo-campo">
+                    <label for="busqueda">Buscar producto</label>
+                    <input type="text" id="busqueda" placeholder="Nombre del producto">
+                    <small id="error-busqueda" class="mensaje-error"></small>
+                </div>
+
+                <div class="filascampo">
                     <div class="grupo-campo">
-                        <label for="codigo">Código de Barras / Código</label>
-                        <input type="text" id="codigo" placeholder="Ej. 1002" autocomplete="off">
+                        <label for="cantidad">Cantidad</label>
+                        <input type="number" id="cantidad" value="1">
+                        <small id="error-cantidad" class="mensaje-error"></small>
                     </div>
+
                     <div class="grupo-campo">
-                        <label for="busqueda">Buscar producto</label>
-                        <input type="text" id="busqueda" placeholder="Nombre del producto">
+                        <label for="descuento">Descuento (%)</label>
+                        <input type="number" id="descuento" value="0">
+                        <small id="error-descuento" class="mensaje-error"></small>
                     </div>
-                    <div class="filascampo">
-                        <div class="field-group">
-                            <label for="cantidad">Cantidad</label>
-                            <input type="number" id="cantidad" min="1" value="1">
-                        </div>
-                        <div class="grupo-campo">
-                            <label for="descuento">Descuento (%)</label>
-                            <input type="number" id="descuento" min="0" max="100" value="0">
-                        </div>
-                    </div>
-                    <div class="filascampo">
-                        <div class="grupo-campo">
-                            <label for="metodoPago">Método de Pago</label>
-                            <select id="metodoPago">
-                                <option value="Efectivo">Efectivo</option>
-                                <option value="Tarjeta">Tarjeta</option>
-                            </select>
-                        </div>
-                        <div class="grupo-campo">
-                            <label for="efectivo">Efectivo Recibido</label>
-                            <input type="number" id="efectivo" min="0" step="0.01" value="0">
-                        </div>
-                    </div>
-
-                    <div class="buttones">
-                        <button type="button" id="btnAgregar">Añadir a la factura</button>
-                        <button type="button" id="btnRemover">Remover línea</button>
-                        <button type="button" id="btnConfirmar">Confirmar venta y cobrar</button>
-                    </div>
-                </form>
-
-                <div class="resumen-pago">
-
-                    <h3>Resumen de Venta</h3>
-
-                    <p>
-                        <span>Subtotal</span>
-                        <span id="subtotalResumen">0 XFA</span>
-                    </p>
-
-                    <p>
-                        <span>Descuento</span>
-                        <span id="descuentoResumen">0 XFA</span>
-                    </p>
-
-                    <p class="total-final">
-                        <span>Total</span>
-                        <span id="totalResumen">0 XFA</span>
-                    </p>
-
-                    <p>
-                        <span>Cambio</span>
-                        <span id="cambioResumen">0 XFA</span>
-                    </p>
 
                 </div>
 
+                <div class="filascampo">
+                    <div class="grupo-campo">
+                        <label for="metodoPago">Método de Pago</label>
+                        <select id="metodoPago">
+                            <option value="Efectivo">
+                                Efectivo
+                            </option>
+                            <option value="Tarjeta">
+                                Tarjeta
+                            </option>
+                        </select>
+                    </div>
+
+                    <div class="grupo-campo">
+                        <label for="efectivo">Efectivo Recibido</label>
+                        <input type="number" id="efectivo" value="0">
+                        <small id="error-efectivo" class="mensaje-error"></small>
+                    </div>
+                </div>
+
+                <div class="buttones">
+                    <button type="button" id="btnAgregar">
+                        Añadir a la factura
+                    </button>
+                    <button type="button" id="btnRemover">
+                        Remover línea
+                    </button>
+                    <button type="button" id="btnConfirmar">
+                        Confirmar venta y cobrar
+                    </button>
+                </div>
+            </form>
+
+            <div class="resumen-pago">
+
+                <h3>Resumen de Venta</h3>
+
+                <p>
+                    <span>Subtotal</span>
+                    <span id="subtotalResumen">0 XFA</span>
+                </p>
+
+                <p>
+                    <span>Descuento</span>
+                    <span id="descuentoResumen">0 XFA</span>
+                </p>
+
+                <p class="total-final">
+                    <span>Total</span>
+                    <span id="totalResumen">0 XFA</span>
+                </p>
+
+                <p>
+                    <span>Cambio</span>
+                    <span id="cambioResumen">0 XFA</span>
+                </p>
+            </div>
             </div>
 
 
@@ -129,7 +147,7 @@
                         </tr>
                     </thead>
                     <tbody id="carro-body">
-                        <!-- Items de la factura -->
+                        <!-- aqui vendran los Productos añadidos desde JS -->
                     </tbody>
                 </table>
             </section>

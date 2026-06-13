@@ -84,6 +84,8 @@ main{
     color:#64748b;
 }
 
+
+
 .ventas{
     display:grid;
     grid-template-columns:2fr 1fr;
@@ -136,6 +138,20 @@ main{
     grid-template-columns:
     repeat(2,1fr);
     gap:20px;
+}
+
+.mensaje-error{
+    display:none;
+    color:red;
+    font-size:14px;
+}
+
+.error{
+    border:2px solid red;
+}
+
+.correcto{
+    border:2px solid green;
 }
 
 .buttones{
