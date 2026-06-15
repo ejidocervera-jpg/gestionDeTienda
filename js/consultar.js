@@ -41,7 +41,7 @@ function cargarProductos() {
 
 function mostrarProductos(listaProductos) {
 
-    const tbody =document.getElementById("productos-consulta");
+    const tbody = document.getElementById("productos-consulta");
 
     tbody.innerHTML = "";
 
@@ -59,16 +59,11 @@ function mostrarProductos(listaProductos) {
         const tdPrecio = document.createElement("td");
         const tdDescripcion = document.createElement("td");
 
-        tdCodigo.textContent =listaProductos[i].codigo;
-
-        tdProducto.textContent =listaProductos[i].nombre;
-
-        tdCategoria.textContent =listaProductos[i].categoria;
-
-        tdStock.textContent =listaProductos[i].stock;
-
+        tdCodigo.textContent = listaProductos[i].codigo;
+        tdProducto.textContent = listaProductos[i].nombre;
+        tdCategoria.textContent = listaProductos[i].categoria;
+        tdStock.textContent = listaProductos[i].stock;
         tdPrecio.textContent = listaProductos[i].precio.toLocaleString() +" XFA";
-
         tdDescripcion.textContent = listaProductos[i].descripcion;
    
         // añadiendo td a la fila

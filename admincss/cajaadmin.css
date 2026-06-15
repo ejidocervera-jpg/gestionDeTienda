@@ -2,7 +2,7 @@
 :root{
   --colorPrimario:#0056b3;
   --colorSecundario:#ffffff;
-  --bag:linear-gradient(180deg,#f8fbff,#eef4ff);
+  --bag:linear-gradient(180deg,#f8fbff,#1b8dff);
   --radius:12px;
 }
 
@@ -113,22 +113,6 @@ main{
     font-weight:bold;
 }
 
-.efectivo{
-    border-left:5px solid #10b981;
-}
-.tarjeta{
-    border-left:5px solid #3b82f6;
-}
-.total{
-    border-left:5px solid #f59e0b;
-}
-.diferencia{
-    border-left:5px solid #ef4444;
-}
-
-.ventas{
-    border-left:5px solid #8b5cf6;
-}
 
 .filtro-caja{
     background:white;
@@ -192,7 +176,7 @@ main{
 }
 
 footer{
-  margin-top:40px;
+  margin-top:17%;
   background:var(--colorPrimario);
   color:white;
   text-align:center;

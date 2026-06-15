@@ -2,7 +2,7 @@
 :root{
   --colorPrimario:#0056b3;
   --colorSecundario:#ffffff;
-  --bag:linear-gradient(180deg,#f8fbff,#eef4ff);
+  --bag:linear-gradient(180deg,#f8fbff,#1b8dff);
   --radius:12px;
 }
 
@@ -96,6 +96,7 @@ main h1{
     padding:25px;
     border-radius:var(--radius);
     box-shadow:0 4px 20px rgba(0,0,0,.05);
+    position: relative;
 }
 
 .agregar-proveedor h2{
@@ -104,16 +105,16 @@ main h1{
 }
 
 .modal{
-    display:none;
-    position:fixed;
-    top:0;
-    left:0;
+    display:none; 
     width:100%;
-    height:100%;
+    height:100vh;
     background:rgba(0,0,0,.5);
     z-index:2000;
-    justify-content:center;
-    align-items:center;
+    justify-content: center;
+    align-items: center;
+    position: absolute;
+    right: -30%;
+
 }
 .modal-contenedor{
     background:white;
@@ -122,7 +123,8 @@ main h1{
     padding:30px;
     border-radius:var(--radius);
     box-shadow:0 10px 40px rgba(0,0,0,.2);
-    position:relative;
+    justify-content: center;
+    align-items: center;
 }
 
 .cerrar-modal{
@@ -140,7 +142,7 @@ main h1{
 }
 
 .modal-contenedor{
-    animation:aparecer .3s ease;
+    animation:aparecer .8s ease;
 }
 
 @keyframes aparecer{
@@ -197,7 +199,6 @@ main h1{
     padding:20px;
     border-radius:var(--radius);
     box-shadow:0 4px 20px rgba(0,0,0,.05);
-    border-left:5px solid var(--colorPrimario);
 }
 .caja span{
     display:block;
@@ -210,6 +211,7 @@ main h1{
 .proveedores{
     background:var(--colorSecundario);
     padding:25px;
+    margin-top:20px;
     border-radius:var(--radius);
     box-shadow:0 4px 20px rgba(0,0,0,.05);
     margin-bottom:30px;
@@ -307,7 +309,7 @@ main h1{
 }
 
 footer{
-  margin-top:40px;
+  margin-top:15%;
   background:var(--colorPrimario);
   color:white;
   text-align:center;

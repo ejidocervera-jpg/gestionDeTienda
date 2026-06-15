@@ -2,7 +2,7 @@
 :root{
   --colorPrimario:#0056b3;
   --colorSecundario:#ffffff;
-  --bag:linear-gradient(180deg,#f8fbff,#eef4ff);
+  --bag:linear-gradient(180deg,#f8fbff,#1b8dff);
   --radius:12px;
 }
 
@@ -56,7 +56,7 @@ nav a:hover{
 
 body{
   min-height:100vh;
-  font-family:'Segoe UI',sans-serif;
+  font-family:Arial;
   background:var(--bag);
   color:#222;
 }
@@ -94,7 +94,7 @@ main{
 }
 
 .form{
-    background:white;
+    background-color:white;
     padding:25px;
     border-radius:var(--radius);
     box-shadow:0 4px 20px rgba(0,0,0,.05);
@@ -135,8 +135,7 @@ main{
 
 .filascampo{
     display:grid;
-    grid-template-columns:
-    repeat(2,1fr);
+    grid-template-columns:repeat(2,1fr);
     gap:20px;
 }
 
@@ -263,7 +262,7 @@ main{
 }
 
 footer{
-  margin-top:40px;
+  margin-top:15%;
   background:var(--colorPrimario);
   color:white;
   text-align:center;

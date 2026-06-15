@@ -2,7 +2,7 @@
 :root{
   --colorPrimario:#0056b3;
   --colorSecundario:#ffffff;
-  --bag:linear-gradient(180deg,#f8fbff,#eef4ff);
+  --bag:linear-gradient(180deg,#f8fbff,#1b8dff);
   --radius:12px;
 }
 
@@ -113,21 +113,6 @@ main{
     color:var(--colorPrimario);
 }
 
-.tarjeta.ventas{
-    border-top:4px solid #4caf50;
-}
-.tarjeta.proveedores{
-    border-top:4px solid #2196f3;
-}
-.tarjeta.usuarios{
-    border-top:4px solid #ff9800;
-}
-.tarjeta.stock{
-    border-top:4px solid #f44336;
-}
-.tarjeta.ganancia{
-    border-top:4px solid #9c27b0;
-}
 
 .acciones-rapidas{
     display:flex;
@@ -149,7 +134,7 @@ main{
 }
 
 .top-productos{
-    background:white;
+    background-color:white;
     padding:25px;
     border-radius:var(--radius);
     box-shadow:0 4px 20px rgba(0,0,0,.05);
@@ -181,7 +166,7 @@ main{
 }
 
 footer{
-  margin-top:40px;
+  margin-top:15%;
   background:var(--colorPrimario);
   color:white;
   text-align:center;

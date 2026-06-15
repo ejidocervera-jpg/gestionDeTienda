@@ -2,7 +2,7 @@
 :root{
   --colorPrimario:#0056b3;
   --colorSecundario:#ffffff;
-  --bag:linear-gradient(180deg,#f8fbff,#eef4ff);
+  --bag:linear-gradient(180deg,#f8fbff,#1b8dff);
   --radius:12px;
 }
 
@@ -71,52 +71,74 @@ main h1{
     padding:25px;
     border-radius:var(--radius);
     box-shadow:0 4px 20px rgba(0,0,0,.05);
+    margin-top:20px;
+}
+
+main h1{
+    color:var(--colorPrimario);
+    font-size:2rem;
+    margin-bottom:20px;
 }
 
 #btnusuario{
     background:var(--colorPrimario);
-    color:white;
+    color:var(--colorSecundario);
     border:none;
     padding:12px 20px;
-    border-radius:10px;
+    border-radius:8px;
+    font-size:16px;
     cursor:pointer;
-    font-weight:600;
+    transition:.3s;
     margin-bottom:20px;
 }
 
 #btnusuario:hover{
-    opacity:.9;
+    transform:translateY(-2px);
 }
 
 .buscar-usuario{
     margin-bottom:20px;
 }
+
 .buscar-usuario input{
     width:100%;
-    padding:14px;
+    max-width:320px;
+    padding:12px;
     border:1px solid #dbe2ea;
     border-radius:10px;
+    outline:none;
+}
+
+.buscar-usuario input:focus{
+    border-color:var(--colorPrimario);
+}
+
+#tablaUsuarios{
+    width:100%;
+    border-collapse:collapse;
 }
 
 #tablaUsuarios thead{
     background:var(--colorPrimario);
-    color:white;
-    width: 100%;
+    color:var(--colorSecundario);
 }
 
 #tablaUsuarios th,
 #tablaUsuarios td{
-    padding:15px;
+    padding:14px;
     text-align:left;
-}
-
-#tablaUsuarios tbody tr{
-    border-bottom:1px solid #eef2f7;
+    border-bottom:1px solid #eef4ff;
 }
 
 #tablaUsuarios tbody tr:hover{
     background:#f8fbff;
 }
+
+#tablaUsuarios .activo{
+    text-align:center;
+}
+
+
 
 .modal{
     display:none;
@@ -249,7 +271,7 @@ main h1{
 }
 
 footer{
-  margin-top:40px;
+  margin-top:35%;
   background:var(--colorPrimario);
   color:white;
   text-align:center;

@@ -2,7 +2,7 @@
 :root{
   --colorPrimario:#0056b3;
   --colorSecundario:#ffffff;
-  --bag:linear-gradient(180deg,#f8fbff,#eef4ff);
+  --bag:linear-gradient(180deg, #ffff,#1b8dff);
   --radius:12px;
 }
 
@@ -14,7 +14,7 @@
 
 body{
   min-height:100vh;
-  font-family:'Segoe UI',sans-serif;
+  font-family:Arial;
   background:var(--bag);
   color:#222;
 }
@@ -97,7 +97,6 @@ main{
   border-radius:var(--radius);
   box-shadow:0 4px 20px rgba(0,0,0,.05);
   transition:.3s;
-  border-left:5px solid var(--colorPrimario);
 }
 .tarjetas:hover{
   box-shadow:0 8px 30px rgba(0,0,0,.1);
@@ -139,13 +138,14 @@ main{
   margin-bottom:10px;
   background:#f8fbff;
   border-radius:8px;
-  border-left:4px solid var(--colorPrimario);
+
 }
 
 footer{
-  margin-top:40px;
+  margin-top:15%;
   background:var(--colorPrimario);
   color:white;
   text-align:center;
   padding:20px;
+
 }

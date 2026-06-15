@@ -1,7 +1,7 @@
 ﻿
 // mis variables iniciales o globales
 let productos = [];
-let carrito = [];
+let factura = [];
 
 // las expresiones regulares de los 
 const PatronCodigo = /^[0-9]+$/;
@@ -9,7 +9,6 @@ const PatronProducto = /^[a-zA-ZáéíóúÁÉÍÓÚñÑ0-9\s]+$/;
 
 document.addEventListener("DOMContentLoaded", function () {
     cargarProductos();
-
     let codigo = document.getElementById("codigo");
     let busqueda = document.getElementById("busqueda");
     let errorCodigo = document.getElementById("error-codigo");
@@ -21,7 +20,7 @@ document.addEventListener("DOMContentLoaded", function () {
             codigo.classList.remove("correcto");
             codigo.classList.remove("error");
             errorCodigo.style.display = "none";
-            return;
+            return false;
         }
 
         if (PatronCodigo.test(codigo.value)) {
@@ -42,7 +41,7 @@ document.addEventListener("DOMContentLoaded", function () {
             busqueda.classList.remove("correcto");
             busqueda.classList.remove("error");
             errorBusqueda.style.display = "none";
-            return;
+            return false;
         }
 
         if (PatronProducto.test(busqueda.value)) {
@@ -58,13 +57,25 @@ document.addEventListener("DOMContentLoaded", function () {
     });
 
     // capturando los botones
-    document.getElementById("btnAgregar").addEventListener("click", agregarProducto);
-    document.getElementById("btnRemover").addEventListener("click", removerLinea);
-    document.getElementById("btnConfirmar").addEventListener("click", confirmarVenta);
+    document.getElementById("btnAgregar").addEventListener("click", function(e) {
+        e.preventDefault(); 
+        agregarProducto();
+    });
+    
+    document.getElementById("btnRemover").addEventListener("click", function(e) {
+        e.preventDefault(); 
+        removerLinea();
+    });
+
+    document.getElementById("btnConfirmar").addEventListener("click", function(e) {
+        e.preventDefault(); 
+        confirmarVenta();
+    });
+
     document.getElementById("efectivo").addEventListener("input", calcularCambio);
 });
 
-// ===== Cargar productos desde JSON =====
+//  Cargar productos desde JSON =====
 function cargarProductos() {
     const xhr = new XMLHttpRequest();
     xhr.open("GET", "./json/ventas.json", true);
@@ -78,13 +89,11 @@ function cargarProductos() {
     xhr.send();
 }
 
-// ===== Buscar producto por código o nombre =====
+//  Buscar producto por código o nombre =====
 function buscarProducto() {
     const codigo = document.getElementById("codigo").value.trim();
     const busqueda = document.getElementById("busqueda").value.trim().toLowerCase();
-
     let productoEncontrado = null;
-
     if (codigo.length > 0) {
         productoEncontrado = productos.find(p => String(p.codigo) === codigo);
     } else if (busqueda.length > 0) {
@@ -94,13 +103,12 @@ function buscarProducto() {
     return productoEncontrado;
 }
 
-// ===== Añadir producto a la factura =====
+//  Añadiendo producto a la factura =====
 function agregarProducto() {
     const producto = buscarProducto();
-
     if (!producto) {
         alert("Producto no encontrado");
-        return;
+        return false;
     }
 
     const cantidad = parseInt(document.getElementById("cantidad").value);
@@ -108,19 +116,20 @@ function agregarProducto() {
 
     if (isNaN(cantidad) || cantidad <= 0) {
         alert("Cantidad inválida");
-        return;
+        return false;
     }
 
     if (isNaN(descuento) || descuento < 0 || descuento > 100) {
         alert("Descuento inválido");
-        return;
+        return false;
     }
-
+ // realizando el calculo de resumen venta ====
     const precio = producto.precio;
     const subtotalLinea = precio * cantidad;
     const descuentoLinea = subtotalLinea * (descuento / 100);
     const totalLinea = subtotalLinea - descuentoLinea;
 
+    // añadiendo a la factura ====
     factura.push({
         codigo: producto.codigo,
         nombre: producto.nombre,
@@ -135,18 +144,18 @@ function agregarProducto() {
     limpiarFormulario();
 }
 
-// ===== Remover la última línea de la factura =====
+//  Removiendo la última línea de la factura si esta vacia ===
 function removerLinea() {
     if (factura.length === 0) {
         alert("No hay líneas para remover");
-        return;
+        return false;
     }
     factura.pop();
     renderFactura();
     calcularTotales();
 }
 
-// ===== Renderizar la tabla de la factura =====
+//  transformando los datos de  la tabla de la factura
 function renderFactura() {
     const cuerpo = document.getElementById("carro-body");
     cuerpo.innerHTML = "";
@@ -165,7 +174,7 @@ function renderFactura() {
     });
 }
 
-//  Calcular subtotal, descuento y total 
+//  Calcular subtotal, descuento === 
 function calcularTotales() {
     let subtotal = 0;
     let descuentoTotal = 0;
@@ -177,24 +186,22 @@ function calcularTotales() {
 });
 
     const total = subtotal - descuentoTotal;
-    document.getElementById("subtotalResumen").textContent = subtotal.toFixed(2) + " XFA";
-    document.getElementById("descuentoResumen").textContent = descuentoTotal.toFixed(2) + " XFA";
-    document.getElementById("totalResumen").textContent = total.toFixed(2) + " XFA";
+    document.getElementById("subtotalResumen").textContent = subtotal.toFixed(0) + " XFA";
+    document.getElementById("descuentoResumen").textContent = descuentoTotal.toFixed(0) + " XFA";
+    document.getElementById("totalResumen").textContent = total.toFixed(0) + " XFA";
     calcularCambio();
 }
 
-//  Calcular el cambio según el efectivo recibido 
+// intentando  Calcular el cambio según el dinero que se va ha recibir 
 function calcularCambio() {
     const totalTexto = document.getElementById("totalResumen").textContent;
     const total = parseFloat(totalTexto) || 0;
-
     const efectivo = parseFloat(document.getElementById("efectivo").value) || 0;
     const cambio = efectivo - total;
-    document.getElementById("cambioResumen").textContent =
-        (cambio >= 0 ? cambio.toFixed(2) : "0.00") + " XFA";
+    document.getElementById("cambioResumen").textContent = (cambio >= 0 ? cambio.toLocaleString("fr-FR") : "0") + " XFA";
 }
 
-//  Limpiar el formulario después de agregar 
+// Limpiando el formulario después de agregar 
 function limpiarFormulario() {
     document.getElementById("codigo").value = "";
     document.getElementById("busqueda").value = "";
@@ -204,6 +211,10 @@ function limpiarFormulario() {
     document.getElementById("busqueda").classList.remove("correcto", "error");
 }
 
+// aqui estoy empezando a introducir locastorage generando un numero de factura
+  // bloqueo temporal pata localstorage
+
+
 // Confirmar venta 
 function confirmarVenta() {
     if (factura.length === 0) {
@@ -211,16 +222,35 @@ function confirmarVenta() {
         return false;
     }
 
+    const subtotal = parseFloat(document.getElementById("subtotalResumen").textContent) || 0;
+    const descuentoTotal = parseFloat(document.getElementById("descuentoResumen").textContent) || 0;
     const total = parseFloat(document.getElementById("totalResumen").textContent) || 0;
     const efectivo = parseFloat(document.getElementById("efectivo").value) || 0;
+    const metodoPago = document.getElementById("metodoPago").value;
 
     if (efectivo < total) {
         alert("El efectivo recibido es insuficiente");
         return false;
     }
+    const cambio = efectivo - total;
 
-    alert("Venta confirmada. Total: " + total.toFixed(2) + " XFA");
-    // tratando de reiniciar la factura
+    // creando  el objeto de la venta
+    const venta = {
+        numeroFactura: generarNumeroFactura(),
+        fecha: new Date().toLocaleString(),
+        productos: [...factura],
+        subtotal: subtotal,
+        descuento: descuentoTotal,
+        total: total,
+        metodoPago: metodoPago,
+        efectivo: efectivo,
+        cambio: cambio
+    };
+
+    guardarVenta(venta);
+    alert("Venta numero " + venta.numeroFactura + " confirmada. Total: " + total.toFixed(0) + " XFA. Cambio: " + cambio.toFixed(0) + " XFA");
+
+    // reiniciar la factura
     factura = [];
     renderFactura();
     calcularTotales();

@@ -15,8 +15,8 @@
       "stock": 4
     },
     {"codigo": "1003", 
-    "nombre": "Cargador USB-C", 
-      "categoria": "Telefonía",
+    "nombre": "Cargador USB", 
+    "categoria": "Telefonía",
     "descripcion": "Teléfono inteligente de última generación",
     "precio": 10000, 
     "stock": 6

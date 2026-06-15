@@ -22,6 +22,7 @@ function mostrarHistorial(listaVentas){
     const tbody = document.getElementById("historial-body");
     tbody.innerHTML = "";
     for(let i = 0; i < listaVentas.length; i++){
+        
         const fila = document.createElement("tr");
         const tdId = document.createElement("td");
         const tdFecha = document.createElement("td");
@@ -57,7 +58,7 @@ function mostrarHistorial(listaVentas){
     }
 
 }
-// TRABAJANDO EN ACTUALIZAR RESUMEN
+// AQUI ESTOY TRATANDO DE ACTUALIZAR EL RESUNMEN
 
 function actualizarResumen(listaVentas){
     // TOTAL DE VENTAS
@@ -77,7 +78,6 @@ function actualizarResumen(listaVentas){
         }
 
     }
-
     document.getElementById("ventasEfectivo").textContent = efectivo;
     document.getElementById("ventasTarjeta").textContent = tarjeta;
 

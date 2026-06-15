@@ -3,14 +3,30 @@
     {
       "id": "P-101",
       "nombre": "TecnoSupply",
-      "contacto": "Laura Rios",
+      "contacto": "Laura Opo",
       "telefono": "222-555-812",
       "correo": "contacto@tecnosupply.com"
     },
     {
       "id": "P-102",
       "nombre": "ElectroMax",
-      "contacto": "Andrés Méndez",
+      "contacto": "Benjamin Camarero",
+      "telefono": "555-655-014",
+      "correo": "ventas@electromax.com"
+    },
+
+      {
+      "id": "P-103",
+      "nombre": "ElectroMax",
+      "contacto": "Javier Catalan",
+      "telefono": "555-655-014",
+      "correo": "ventas@electromax.com"
+    },
+
+      {
+      "id": "P-104",
+      "nombre": "ElectroMax",
+      "contacto": "Felicidad cervera",
       "telefono": "555-655-014",
       "correo": "ventas@electromax.com"
     }

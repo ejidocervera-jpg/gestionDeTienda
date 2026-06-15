@@ -9,14 +9,14 @@
   {
     "id": 2,
     "usuario": "empleado1",
-    "nombre": "Luis Martínez",
+    "nombre": "Luis felipe",
     "rol": "empleado",
     "estado": "Activo"
   },
   {
     "id": 3,
     "usuario": "empleado2",
-    "nombre": "Sandra Torres",
+    "nombre": "Sandra Ndong",
     "rol": "empleado",
     "estado": "Activo"
   }
